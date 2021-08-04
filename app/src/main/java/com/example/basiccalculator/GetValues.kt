@@ -17,6 +17,8 @@ class GetValues : AppCompatActivity() , View.OnClickListener {
     var answer : Int = 0
     var Number1 : String =""
     var Number2 : String =""
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_get_values)
@@ -64,7 +66,7 @@ class GetValues : AppCompatActivity() , View.OnClickListener {
 
     override fun onClick(view: View){
 
-        val intent = Intent(this, MainActivity::class.java)
+       val intent = Intent()
 
         var number1 : EditText = findViewById(R.id.num1)
         var number2 : EditText = findViewById(R.id.num2)
@@ -98,8 +100,16 @@ class GetValues : AppCompatActivity() , View.OnClickListener {
 //            Toast.makeText(this, answer.toString(), Toast.LENGTH_LONG).show()
             result+=answer.toString()
             intent.putExtra("ans",result)
+            setResult(1,intent)
 
-            startActivity(intent)
+          //  MainActivity().output(result)
+
+            finish()
+            //startActivity(intent)
+            Toast.makeText(this,"Finished",Toast.LENGTH_LONG).show()
+
+
+
 
         }
         else

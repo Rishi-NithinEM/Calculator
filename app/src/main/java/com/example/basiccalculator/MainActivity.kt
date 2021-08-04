@@ -1,5 +1,6 @@
 package com.example.basiccalculator
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,7 +11,7 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
-//    val add: Button = findViewById(R.id.button1)
+    //    val add: Button = findViewById(R.id.button1)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,46 +22,45 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val div: Button = findViewById(R.id.button4)
         val reset: Button = findViewById(R.id.Reset1)
 
-        reset.isVisible=false
+        reset.isVisible = false
         add.setOnClickListener(this)
         sub.setOnClickListener(this)
         mul.setOnClickListener(this)
         div.setOnClickListener(this)
 
 
-        var result: String = intent.getStringExtra("ans").toString()
-        if(result!="null")
-            output(result)
-
     }
 
     override fun onClick(view: View) {
 
         val intent = Intent(this, GetValues::class.java)
-        when(view.id) {
-            R.id.button1 ->{
+        when (view.id) {
+            R.id.button1 -> {
 
-                intent.putExtra("key","+")
-
-            }
-            R.id.button2 ->{
-                intent.putExtra("key","-")
+                intent.putExtra("key", "+")
 
             }
-            R.id.button3 ->{
-
-                intent.putExtra("key","x")
+            R.id.button2 -> {
+                intent.putExtra("key", "-")
 
             }
-            R.id.button4 ->{
+            R.id.button3 -> {
 
-                intent.putExtra("key","/")
+                intent.putExtra("key", "x")
+
+            }
+            R.id.button4 -> {
+
+                intent.putExtra("key", "/")
 
             }
         }
-        startActivity(intent)
+        startActivityForResult(intent, 1)
     }
-    fun output(string: String){
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+
+        super.onActivityResult(requestCode, resultCode, data)
 
         val add: Button = findViewById(R.id.button1)
         val sub: Button = findViewById(R.id.button2)
@@ -72,21 +72,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val reset: Button = findViewById(R.id.Reset1)
         val intent = Intent(this, MainActivity::class.java)
 
-        add.isVisible=false
-        sub.isVisible=false
-        mul.isVisible=false
-        div.isVisible=false
-        txt1.isVisible=false
-        txt2.isVisible=false
-        reset.isVisible=true
+        add.isVisible = false
+        sub.isVisible = false
+        mul.isVisible = false
+        div.isVisible = false
+        txt1.isVisible = false
+        txt2.isVisible = false
+        reset.isVisible = true
 
 
-        out.setText(string)
+        out.text = data?.getStringExtra("ans").toString()
 
-        reset.setOnClickListener(){
+        reset.setOnClickListener {
             startActivity(intent)
         }
 //        Toast.makeText(this,string,Toast.LENGTH_LONG).show()
 
     }
 }
+
