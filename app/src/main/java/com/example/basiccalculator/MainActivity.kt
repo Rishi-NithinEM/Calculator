@@ -72,6 +72,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val reset: Button = findViewById(R.id.Reset1)
         val intent = Intent(this, MainActivity::class.java)
 
+        if(data?.getStringExtra("ans").toString()=="null"){
+            val intent = getIntent()
+            finish()
+            startActivity(intent)
+        }
+
         add.isVisible = false
         sub.isVisible = false
         mul.isVisible = false
