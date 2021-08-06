@@ -55,7 +55,7 @@ class GetValues : AppCompatActivity() , View.OnClickListener {
 
         reset.setOnClickListener(){
 
-//            Toast.makeText(this,"Working",Toast.LENGTH_LONG).show()
+           Toast.makeText(this,"Working",Toast.LENGTH_LONG).show()
             number1.setText("")
             number2.setText("")
 
