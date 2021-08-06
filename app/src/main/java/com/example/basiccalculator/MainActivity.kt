@@ -88,7 +88,27 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         out.text = data?.getStringExtra("ans").toString()
 
         reset.setOnClickListener {
-            recreate()
+
+            val add: Button = findViewById(R.id.button1)
+            val sub: Button = findViewById(R.id.button2)
+            val mul: Button = findViewById(R.id.button3)
+            val div: Button = findViewById(R.id.button4)
+            val txt1: TextView = findViewById(R.id.Option)
+            val txt2: TextView = findViewById(R.id.Title)
+            val out: TextView = findViewById(R.id.outputscreen)
+            val reset: Button = findViewById(R.id.Reset1)
+
+            add.isVisible = true
+            sub.isVisible = true
+            mul.isVisible = true
+            div.isVisible = true
+            txt1.isVisible = true
+            txt2.isVisible = true
+            reset.isVisible = false
+            out.isVisible = false
+
+
+//            recreate()
         }
 //        Toast.makeText(this,string,Toast.LENGTH_LONG).show()
 
