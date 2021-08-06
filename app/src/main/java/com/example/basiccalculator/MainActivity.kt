@@ -73,9 +73,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val intent = Intent(this, MainActivity::class.java)
 
         if(data?.getStringExtra("ans").toString()=="null"){
-            val intent = getIntent()
-            finish()
-            startActivity(intent)
+            recreate()
         }
 
         add.isVisible = false
@@ -90,7 +88,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         out.text = data?.getStringExtra("ans").toString()
 
         reset.setOnClickListener {
-            startActivity(intent)
+            recreate()
         }
 //        Toast.makeText(this,string,Toast.LENGTH_LONG).show()
 
