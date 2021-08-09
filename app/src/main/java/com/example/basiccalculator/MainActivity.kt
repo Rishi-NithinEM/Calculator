@@ -152,7 +152,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             val out: TextView = findViewById(R.id.outputscreen)
             val reset: Button = findViewById(R.id.Reset1)
 
-            if (result != "null" && result == "z") {
+            if (result != "null" && result != "z") {
                 add.isVisible = false
                 sub.isVisible = false
                 mul.isVisible = false
@@ -160,8 +160,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 txt1.isVisible = false
                 txt2.isVisible = false
                 reset.isVisible = true
+                out.isVisible = true
 
-
+                out.text=result
 
                 reset.setOnClickListener {
 
