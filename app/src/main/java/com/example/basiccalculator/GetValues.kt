@@ -106,7 +106,7 @@ class GetValues : AppCompatActivity() , View.OnClickListener {
 
             finish()
             //startActivity(intent)
-            Toast.makeText(this,"Finished",Toast.LENGTH_LONG).show()
+
 
 
 
