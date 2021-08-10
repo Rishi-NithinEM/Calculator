@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val out: TextView = findViewById(R.id.outputscreen)
 
         reset.isVisible = false
-        out.isVisible=false
+        out.isVisible = false
         add.setOnClickListener(this)
         sub.setOnClickListener(this)
         mul.setOnClickListener(this)
@@ -63,15 +63,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         startActivityForResult(intent, 1)
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-
-        val reset: Button = findViewById(R.id.Reset1)
-
-        if (reset.isVisible == true) {
-            recreate()
-        }
-    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
@@ -162,7 +153,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 reset.isVisible = true
                 out.isVisible = true
 
-                out.text=result
+                out.text = result
 
                 reset.setOnClickListener {
 
@@ -186,9 +177,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
                 }
-            }
-
-            else{
+            } else {
                 val add: Button = findViewById(R.id.button1)
                 val sub: Button = findViewById(R.id.button2)
                 val mul: Button = findViewById(R.id.button3)
@@ -210,7 +199,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
 
+        val add: Button = findViewById(R.id.button1)
+
+        if (add.isVisible == false) {
+            val intent = intent
+            finish()
+            startActivity(intent)
+        }
+
+    }
 
 }
 
