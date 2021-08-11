@@ -13,18 +13,28 @@ import androidx.core.view.isVisible
 import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
-    //    val add: Button = findViewById(R.id.button1)
-    var result: String = ""
+    lateinit var add: Button
+    lateinit var sub: Button
+    lateinit var mul: Button
+    lateinit var div: Button
+    lateinit var reset: Button
+    lateinit var out: TextView
+    lateinit var result: String
+    lateinit var txt1: TextView
+    lateinit var txt2: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val add: Button = findViewById(R.id.button1)
-        val sub: Button = findViewById(R.id.button2)
-        val mul: Button = findViewById(R.id.button3)
-        val div: Button = findViewById(R.id.button4)
-        val reset: Button = findViewById(R.id.Reset1)
-        val out: TextView = findViewById(R.id.outputscreen)
+        add = findViewById(R.id.button1)
+        sub = findViewById(R.id.button2)
+        mul = findViewById(R.id.button3)
+        div = findViewById(R.id.button4)
+        reset = findViewById(R.id.Reset1)
+        out = findViewById(R.id.outputscreen)
+        txt1 = findViewById(R.id.Option)
+        txt2 = findViewById(R.id.Title)
+        result = "z"
 
         reset.isVisible = false
         out.isVisible = false
@@ -68,15 +78,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         super.onActivityResult(requestCode, resultCode, data)
 
-        val add: Button = findViewById(R.id.button1)
-        val sub: Button = findViewById(R.id.button2)
-        val mul: Button = findViewById(R.id.button3)
-        val div: Button = findViewById(R.id.button4)
-        val txt1: TextView = findViewById(R.id.Option)
-        val txt2: TextView = findViewById(R.id.Title)
-        val out: TextView = findViewById(R.id.outputscreen)
-        val reset: Button = findViewById(R.id.Reset1)
-
         result = data?.getStringExtra("ans").toString()
         if (result == "null") {
             recreate()
@@ -95,14 +96,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         reset.setOnClickListener {
 
-            val add: Button = findViewById(R.id.button1)
-            val sub: Button = findViewById(R.id.button2)
-            val mul: Button = findViewById(R.id.button3)
-            val div: Button = findViewById(R.id.button4)
-            val txt1: TextView = findViewById(R.id.Option)
-            val txt2: TextView = findViewById(R.id.Title)
-            val out: TextView = findViewById(R.id.outputscreen)
-            val reset: Button = findViewById(R.id.Reset1)
+
 
             add.isVisible = true
             sub.isVisible = true
@@ -134,14 +128,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         if (savedInstanceState != null) {
             result = savedInstanceState.getString("out", "null")
 
-            val add: Button = findViewById(R.id.button1)
-            val sub: Button = findViewById(R.id.button2)
-            val mul: Button = findViewById(R.id.button3)
-            val div: Button = findViewById(R.id.button4)
-            val txt1: TextView = findViewById(R.id.Option)
-            val txt2: TextView = findViewById(R.id.Title)
-            val out: TextView = findViewById(R.id.outputscreen)
-            val reset: Button = findViewById(R.id.Reset1)
 
             if (result != "null" && result != "z") {
                 add.isVisible = false
@@ -157,14 +143,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
                 reset.setOnClickListener {
 
-                    val add: Button = findViewById(R.id.button1)
-                    val sub: Button = findViewById(R.id.button2)
-                    val mul: Button = findViewById(R.id.button3)
-                    val div: Button = findViewById(R.id.button4)
-                    val txt1: TextView = findViewById(R.id.Option)
-                    val txt2: TextView = findViewById(R.id.Title)
-                    val out: TextView = findViewById(R.id.outputscreen)
-                    val reset: Button = findViewById(R.id.Reset1)
 
                     add.isVisible = true
                     sub.isVisible = true
@@ -178,14 +156,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
                 }
             } else {
-                val add: Button = findViewById(R.id.button1)
-                val sub: Button = findViewById(R.id.button2)
-                val mul: Button = findViewById(R.id.button3)
-                val div: Button = findViewById(R.id.button4)
-                val txt1: TextView = findViewById(R.id.Option)
-                val txt2: TextView = findViewById(R.id.Title)
-                val out: TextView = findViewById(R.id.outputscreen)
-                val reset: Button = findViewById(R.id.Reset1)
 
                 add.isVisible = true
                 sub.isVisible = true
