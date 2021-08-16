@@ -7,19 +7,17 @@
     android:orientation="vertical"
     tools:context=".GetValues">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="49dp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <EditText
             android:id="@+id/num1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_weight="0.333"
             android:numeric="integer"
             tools:ignore="SpeakableTextPresentCheck">
@@ -31,6 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.333"
+            android:layout_gravity="center_vertical"
             android:gravity="center"
             android:text="#"
             android:textSize="15dp" />
@@ -38,7 +37,8 @@
         <EditText
             android:id="@+id/num2"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_weight="0.333"
             android:numeric="integer"
             tools:ignore="SpeakableTextPresentCheck">
@@ -47,27 +47,37 @@
 
     </LinearLayout>
 
-
-    <Space
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="66dp" />
-
-    <Button
-        android:id="@+id/Result"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Output" />
+        android:layout_weight="1"
 
-    <Space
+        android:orientation="vertical"
+        >
+        <Button
+            android:id="@+id/Result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Output" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="42dp" />
-
-    <Button
-        android:id="@+id/Reset"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Reset" />
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+        <Button
+            android:id="@+id/Reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Reset" />
+
+    </LinearLayout>
+
+
 
 </LinearLayout>
