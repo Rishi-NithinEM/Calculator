@@ -13,56 +13,37 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <EditText
             android:id="@+id/num1"
-            android:layout_width="99dp"
-            android:layout_height="65dp"
-
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.333"
             android:numeric="integer"
             tools:ignore="SpeakableTextPresentCheck">
 
         </EditText>
 
-        <Space
-            android:layout_width="28dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
         <TextView
             android:id="@+id/symbol"
-            android:layout_width="73dp"
-            android:layout_height="34dp"
-
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.333"
             android:gravity="center"
             android:text="#"
             android:textSize="15dp" />
 
-        <Space
-            android:layout_width="47dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
         <EditText
             android:id="@+id/num2"
-            android:layout_width="87dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-
+            android:layout_weight="0.333"
             android:numeric="integer"
             tools:ignore="SpeakableTextPresentCheck">
 
         </EditText>
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
 
     </LinearLayout>
 
